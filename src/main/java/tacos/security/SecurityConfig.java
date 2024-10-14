@@ -17,7 +17,9 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public UserDetailsService userDetailsService() {return new UserRepositoryUserDetailsService();}
+    public UserDetailsService userDetailsService() {
+        return new UserRepositoryUserDetailsService();
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -36,13 +38,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/design", "/orders").authenticated()
-                .anyRequest().permitAll())
-            .formLogin(log -> log
-                .loginPage("/login")
-                .defaultSuccessUrl("/design")
-            );
+                .authorizeHttpRequests(authz -> authz
+                        .requestMatchers("/design", "/orders").authenticated()
+                        .anyRequest().permitAll());
+        http
+                .formLogin(login -> login
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/design")
+                );
+
+        http
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/"));
 
         return http.build();
     }
