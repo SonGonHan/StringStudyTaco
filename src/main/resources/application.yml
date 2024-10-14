@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    generate-unique-name: false
+    name: postgres
+    username: postgres
+    password: 12345
+  jpa:
+    open-in-view: false
+#    show-sql: true
+    properties:
+#      jakarta:
+#        persistence:
+#          schema-generation:
+#            scripts:
+#              action: create
+#              create-targer: schema.sql
+#              create-source: metadata
+      hibernate:
+        boot:
+          ddl-auto: update
