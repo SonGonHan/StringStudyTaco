@@ -1,4 +1,4 @@
-package tacos.entity;
+package tacos.data.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

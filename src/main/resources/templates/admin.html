@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+
+<body>
+<h1>Admin</h1>
+<img th:src="@{/images/TacoCloud.png}"/>
+<form method="POST" th:action="@{/deleteOrders}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

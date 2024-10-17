@@ -4,8 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import tacos.entity.Ingredient;
-import tacos.entity.Ingredient.Type;
+import tacos.data.entity.Ingredient;
+import tacos.data.entity.Ingredient.Type;
 import tacos.data.IngredientRepository;
 
 @SpringBootApplication
